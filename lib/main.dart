@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:demo/screens/signup.dart';
 
 void main() {
-  runApp(const MyApp());
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.dumpErrorToConsole(details);
+  };
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

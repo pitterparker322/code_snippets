@@ -12,7 +12,7 @@ class _HomepageState extends State<Homepage> {
   int _currentpage = 0;
 
   final List<String> images = [
-    'assets/intro/image.png',
+    'assets/intro/image.jpeg',
     'assets/intro/img2.jpg',
     'assets/intro/img3.jpg',
   ];
