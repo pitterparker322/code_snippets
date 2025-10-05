@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:demo/custom widget/inputfromfield.dart';
 import 'package:demo/screens/signin.dart';
-import 'package:demo/screens/homepage.dart';
 
 
 class Signup extends StatelessWidget {
@@ -30,21 +29,24 @@ class Signup extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadiusGeometry.circular(100),
+                            borderRadius: BorderRadius.circular(15),
                             child: Image.asset(
-                              scale: 3,
                               "assets/logo.jpg",
                               fit: BoxFit.cover,
+                              height: MediaQuery.sizeOf(context).height * 0.05,
+                              width: MediaQuery.sizeOf(context).width * 0.1,
                             ),
                           ),
-                          Text(
-                            "Create Account",
-                            overflow: TextOverflow.clip,
-                            style: TextStyle(
+                          Expanded(
+                            child: Text(
+                              "Create Account",
+                              maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              color: Colors.black,
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 50,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           
@@ -62,7 +64,7 @@ class Signup extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          // Navigator.pop(context);
+                          Navigator.pop(context);
                           Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Signin(),),);
                         },
@@ -103,15 +105,13 @@ class Signup extends StatelessWidget {
                                   ),
                                    onTap: () {
                                     Navigator.pop(context);
-                                    Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) => Homepage()));
                                   },
                                 ),
                               ),
                               Icon(Icons.navigate_next,color: Colors.white,size: 20,),
                             ],
                           ),
-                              SizedBox(height: 40,),
+                              SizedBox(height: MediaQuery.sizeOf(context).height * 0.04,),
                               Align(
                                 alignment: AlignmentDirectional.centerStart,
                                 child: Text("Email",
@@ -123,7 +123,7 @@ class Signup extends StatelessWidget {
                                 ),),
                               ),
                               InputAcceptor(label: "example@gmail.com"),
-                              SizedBox(height: 35,),
+                              SizedBox(height: MediaQuery.sizeOf(context).height * 0.035,),
                                Align(
                                 alignment: AlignmentDirectional.centerStart,
                                 child: Text("Email",
@@ -135,7 +135,7 @@ class Signup extends StatelessWidget {
                                 ),),
                               ),
                               InputAcceptor(label: "........"),
-                              SizedBox(height: 35,),
+                              SizedBox(height: MediaQuery.sizeOf(context).height * 0.035,),
                             
                               FloatingActionButton.extended(
                                 isExtended: true,
